@@ -1,8 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const TodoForm = ({ addTodo }) => {
+const TodoForm = ({ addTodo, id, title, complete, price, rating, updateTodo, setEdit }) => {
   const [todo, setTodo] = useState({ title: '', complete: false, price: 0.0, rating: 0 })
   
+  useEffect( () => {
+    if (id) {
+      setTodo({ title, complete, price, rating })
+    }
+  }, [])
+
   const handleSubmit = (e) => {
     e.preventDefault()
 
@@ -10,14 +16,19 @@ const TodoForm = ({ addTodo }) => {
     if ( rating <= 0 || rating > 5) {
       alert('Hey rating has to be within 1-5')
     } else {
-      addTodo(todo)
+      if (id) {
+        updateTodo(id, todo)
+        setEdit(false)
+      } else {
+        addTodo(todo)
+      }
       setTodo({ title: '', complete: false, price: 0.0, rating: 0 })
     }
   }
 
   return(
     <>
-      <h1>Create Todo</h1>
+      <h1>{ id ? 'Edit' : 'Create' } Todo</h1>
       <form onSubmit={handleSubmit}>
         <label>Title</label>
         <input
