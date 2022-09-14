@@ -32,6 +32,14 @@ const Lists = () => {
       .catch( err => console.log(err))
   }
 
+  const deleteList = (id) => {
+    axios.delete(`/api/lists/${id}`)
+      .then( res => {
+        setLists(lists.filter( l => l.id !== id))
+      })
+      .catch( err => console.log(err))
+  }
+
   return (
     <>
       <ListForm addList={addList} />
@@ -39,6 +47,7 @@ const Lists = () => {
       <AllList 
         lists={lists}
         updateList={updateList}
+        deleteList={deleteList}
       />
     </>
   )
