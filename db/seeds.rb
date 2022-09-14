@@ -1,7 +1,22 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+Todo.delete_all
+List.delete_all 
+
+3.times do 
+  list = List.create(
+    title: Faker::Hobby.activity,
+    desc: Faker::Lorem.paragraph
+  )
+
+  3.times do 
+    todo = Todo.create(
+      title: Faker::Food.fruits,
+      complete: Faker::Boolean.boolean,
+      rating: 3,
+      price: 0.0,
+      list_id: list.id
+    )
+  end
+end
+
+puts "List ##{List.count}"
+puts "Todos ##{Todo.count}"
