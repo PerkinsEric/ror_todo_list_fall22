@@ -1,3 +1,4 @@
+Note.delete_all
 Todo.delete_all
 List.delete_all 
 
@@ -15,8 +16,15 @@ List.delete_all
       price: 0.0,
       list_id: list.id
     )
+
+    note = Note.create(
+      subject: Faker::Superhero.power,
+      body: Faker::Lorem.paragraph,
+      todo_id: todo.id
+    )
   end
 end
 
 puts "List ##{List.count}"
 puts "Todos ##{Todo.count}"
+puts "Notes ##{Note.count}"
