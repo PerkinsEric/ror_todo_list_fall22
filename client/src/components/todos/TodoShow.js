@@ -1,6 +1,7 @@
 import Moment from 'react-moment';
 import { useState } from 'react';
 import TodoForm from './TodoForm';
+import { Link } from 'react-router-dom';
 
 const TodoShow = ({ id, title, complete, price, rating, created_at, updateTodo, deleteTodo }) => {
   const [editing, setEdit] = useState(false)
@@ -46,7 +47,9 @@ const TodoShow = ({ id, title, complete, price, rating, created_at, updateTodo, 
           <button onClick={() => deleteTodo(id)}>
             Delete
           </button>
-          <button>Notes</button>
+          <Link to={`/${id}/notes`}>
+            <button>Notes</button>
+          </Link>
         </>
       } 
     </>
