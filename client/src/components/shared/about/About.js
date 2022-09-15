@@ -1,8 +1,11 @@
+import AboutHeader from "./AboutHeader";
+import Team from "./Team";
 
 const About = () => (
-     <>
-      <h1>About Page</h1>
-    </>
+  <>
+    <AboutHeader />
+    <Team />
+  </>
 )
 
 export default About;

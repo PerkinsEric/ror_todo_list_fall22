@@ -3,13 +3,13 @@ import Home from './components/shared/home/Home';
 import About from './components/shared/about/About';
 import Lists from './components/lists/Lists';
 import Nomatch from './components/shared/Nomatch';
-import Navbar from './components/shared/Navbar';
+import MainNavbar from './components/shared/MainNavbar';
 import Todos from './components/todos/Todos';
 import Notes from './components/notes/Notes';
 
 const App = () => (
   <>
-    <Navbar />
+    <MainNavbar />
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/about' element={<About />} />
@@ -22,4 +22,3 @@ const App = () => (
 )
 
 export default App;
-

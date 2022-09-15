@@ -1,52 +1,60 @@
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+
 const Price = () => (
-    <>
-      <h1>Prices</h1>
-      
-      <div>
-        <h1>Bronze</h1>
-        <h2>Base</h2>
-  
-        <ol>
-          <li>Feature</li>
-          <li>Feature</li>
-          <li>Feature</li>
-        </ol>
-  
-        <button>
-          $
-        </button>
-      </div>
-  
-      <div>
-        <h1>Silver</h1>
-        <h2>Mid</h2>
-  
-        <ol>
-          <li>Feature</li>
-          <li>Feature</li>
-          <li>Feature</li>
-        </ol>
-  
-        <button>
-          $$
-        </button>
-      </div>
-  
-      <div>
-        <h1>Gold</h1>
-        <h2>Extra</h2>
-  
-        <ol>
-          <li>Feature</li>
-          <li>Feature</li>
-          <li>Feature</li>
-        </ol>
-  
-        <button>
-          $$$
-        </button>
-      </div>
-    </>
-  )
-  
-  export default Price;
+  <Container>
+    <h1 className="text-center">Prices</h1>
+    
+    <Row>
+      <Col sm='12' md='4'>
+        <Card style={{ width: '18rem' }}>
+          <Card.Body>
+            <Card.Title>Bronze</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">Base</Card.Subtitle>
+            <Card.Text>
+              <ol>
+                <li>Feature</li>
+                <li>Feature</li>
+                <li>Feature</li>
+              </ol>
+              <Button variant="light">$</Button>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      </Col>
+      <Col sm='12' md='4'>
+        <Card style={{ width: '18rem' }}>
+          <Card.Body>
+            <Card.Title>Silver</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">Mid</Card.Subtitle>
+            <Card.Text>
+              <ol>
+                <li>Feature</li>
+                <li>Feature</li>
+                <li>Feature</li>
+              </ol>
+              <Button variant="light">$$</Button>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      </Col>
+      <Col sm='12' md='4'>
+        <Card style={{ width: '18rem' }}>
+          <Card.Body>
+            <Card.Title>Gold</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">Extra</Card.Subtitle>
+            <Card.Text>
+              <ol>
+                <li>Feature</li>
+                <li>Feature</li>
+                <li>Feature</li>
+              </ol>
+              <Button variant="light">$$$</Button>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      </Col>
+    </Row>
+  </Container>
+)
+
+export default Price;
